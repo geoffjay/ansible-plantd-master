@@ -1,0 +1,6 @@
+---
+- name: restart plantd-master
+  service:
+    name: "{{ plantd_master_daemon }}"
+    state: "{{ plantd_master_restarted_state }}"
+    sleep: 5

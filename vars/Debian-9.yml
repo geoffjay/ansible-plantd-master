@@ -1,0 +1,5 @@
+---
+__plantd_master_version: "0.1.0"
+__plantd_master_packages:
+  - build-essential
+  - protobuf-compiler

@@ -1,0 +1,4 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ plantd_master_packages }}"

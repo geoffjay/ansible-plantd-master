@@ -1,0 +1,11 @@
+---
+# Set the service state when configuration changes are made. Recommended values:
+# `restarted` or `reloaded`
+
+plantd_master_restarted_state: "restarted"
+
+plantd_master_user: plantd
+plantd_master_group: plantd
+
+plantd_master_service_state: started
+plantd_master_service_enabled: true

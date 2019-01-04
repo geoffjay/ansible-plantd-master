@@ -1,5 +1,7 @@
 # Ansible Role: Plantd Master
 
+[WIP] Pre-alpha, doesn't work.
+
 Installs and configures a Plantd master server on a Debian host.
 
 ## Requirements

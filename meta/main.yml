@@ -4,9 +4,9 @@ dependencies: []
 galaxy_info:
   author: geoffjay
   description: Plantd Master server for Linux.
-  company: "Midwestern Mac, LLC"
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
+  role_name: plantdmaster
   platforms:
     - name: Debian
       versions:

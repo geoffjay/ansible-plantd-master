@@ -1,0 +1,13 @@
+[Unit]
+Description=Plantd Master Service
+After=network.target
+
+[Service]
+Type=simple
+User=crdc
+WorkingDirectory={{ plantd_master_srcdir }}
+ExecStart={{ plantd_master_srcdir }}/master-v{{ plantd_master_version }}-linux-amd64
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

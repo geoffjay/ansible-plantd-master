@@ -1,17 +1,26 @@
 ---
-- name: Run database setup
-  shell:
-    cmd: |
-      psql -a -q -h "{{ plantd_master_dbhost }}" \
-        -d "{{ plantd_master_dbname }}" \
-        -U "{{ plantd_master_dbuser }}" \
-        -p "{{ plantd_master_dbport }}" \
-        -W "{{ plantd_master_dbpass }}" \
-        -f "{{ item }}"
-  with_items:
-    - "data/1.0/1_users.sql"
-    - "data/1.0/2_roles.sql"
-    - "data/1.0/3_rel_users_roles.sql"
-  args:
-    chdir: "{{ plantd_master_srcdir }}"
+- name: Install Plantd Master service file.
+  template:
+    src: apex-master.service.j2
+    dest: /lib/systemd/system/apex-master.service
+    mode: 0644
+  notify: restart plantd-master
   tags: [ "plantd-master" ]
+
+# FIXME: can't get postgres role to set user/pass
+#- name: Run database setup
+#  shell:
+#    cmd: |
+#      psql -a -q -h "{{ plantd_master_dbhost }}" \
+#        -d "{{ plantd_master_dbname }}" \
+#        -U "{{ plantd_master_dbuser }}" \
+#        -p "{{ plantd_master_dbport }}" \
+#        -W "{{ plantd_master_dbpass }}" \
+#        -f "{{ item }}"
+#  with_items:
+#    - "data/1.0/1_users.sql"
+#    - "data/1.0/2_roles.sql"
+#    - "data/1.0/3_rel_users_roles.sql"
+#  args:
+#    chdir: "{{ plantd_master_srcdir }}"
+#  tags: [ "plantd-master" ]

@@ -7,8 +7,7 @@
   when: ansible_os_family == 'Debian'
 
 - include_tasks: build.yml
-# FIXME: can't get postgres role to set user/pass
-# - include_tasks: initialize.yml
+- include_tasks: initialize.yml
 
 # TODO: - include_tasks: configure.yml
 # TODO: - import_tasks: users.yml

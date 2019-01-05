@@ -1,10 +1,20 @@
 ---
 # Variable configuration.
-- name: Include OS-specific variables (Debian).
+- name: Include OS-specific variables (Debian)
   include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_version.split('.')[0] }}.yml"
   when: ansible_os_family == 'Debian'
 
-- name: Define plantd_master_packages.
+- name: Define plantd_master_packages
   set_fact:
     plantd_master_packages: "{{ __plantd_master_packages | list }}"
   when: plantd_master_packages is not defined
+
+- name: Define plantd_master_version
+  set_fact:
+    plantd_master_version: "{{ __plantd_master_version }}"
+  when: plantd_master_version is not defined
+
+- name: Define plantd_master_daemon
+  set_fact:
+    plantd_master_daemon: "{{ __plantd_master_daemon }}"
+  when: plantd_master_daemon is not defined

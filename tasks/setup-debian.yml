@@ -1,4 +1,5 @@
 ---
-- name: Install dependencies
+- name: Ensure dependencies are installed
   apt:
     name: "{{ plantd_master_packages }}"
+    state: present

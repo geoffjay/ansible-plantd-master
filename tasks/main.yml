@@ -25,7 +25,7 @@
   args:
     chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
   environment:
-    PATH: {{ ansible_env.HOME }}/go/bin:{{ ansible_env.PATH }}
+    PATH: "{{ ansible_env.HOME }}/go/bin:{{ ansible_env.PATH }}"
   tags: [ "plantd-master" ]
 
 - name: Build the master service
@@ -33,7 +33,7 @@
   args:
     chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
   environment:
-    PATH: {{ ansible_env.HOME }}/go/bin:{{ ansible_env.PATH }}
+    PATH: "{{ ansible_env.HOME }}/go/bin:{{ ansible_env.PATH }}"
   tags: [ "plantd-master" ]
 
 # TODO: - include_tasks: initialize.yml

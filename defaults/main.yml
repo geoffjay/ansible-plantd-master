@@ -1,7 +1,6 @@
 ---
 # Set the service state when configuration changes are made. Recommended values:
 # `restarted` or `reloaded`
-
 plantd_master_restarted_state: "restarted"
 
 plantd_master_user: plantd

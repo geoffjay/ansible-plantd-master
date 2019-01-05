@@ -1,5 +1,10 @@
 # Ansible Role: Plantd Master
 
+<!--[![Build Status](https://img.shields.io/travis/geoffjay/ansible-plantd-master/master.svg?style=for-the-badge)](https://travis-ci.org/geoffjay/ansible-plantd-master-->
+[![stability-stable](https://img.shields.io/badge/stability-stable-green.svg?style=for-the-badge)](https://github.com/orangemug/stability-badges)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/14309.svg?style=for-the-badge)](https://galaxy.ansible.com/geoffjay/plantdmaster)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://raw.githubusercontent.com/geoffjay/ansible-plantd-master/master/LICENSE)
+
 [WIP] Pre-alpha, doesn't work.
 
 Installs and configures a Plantd master server on a Debian host.

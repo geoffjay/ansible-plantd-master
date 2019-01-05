@@ -4,11 +4,6 @@
   include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_version.split('.')[0] }}.yml"
   when: ansible_os_family == 'Debian'
 
-- name: Define plantd_master_packages
-  set_fact:
-    plantd_master_packages: "{{ __plantd_master_packages | list }}"
-  when: plantd_master_packages is not defined
-
 - name: Define plantd_master_version
   set_fact:
     plantd_master_version: "{{ __plantd_master_version }}"
@@ -18,3 +13,13 @@
   set_fact:
     plantd_master_daemon: "{{ __plantd_master_daemon }}"
   when: plantd_master_daemon is not defined
+
+- name: Define __plantd_master_srcdir
+  set_fact:
+    __plantd_master_srcdir: "{{ __plantd_master_srcdir }}"
+  when: __plantd_master_srcdir is not defined
+
+- name: Define plantd_master_packages
+  set_fact:
+    plantd_master_packages: "{{ __plantd_master_packages | list }}"
+  when: plantd_master_packages is not defined

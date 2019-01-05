@@ -1,6 +1,7 @@
 ---
 __plantd_master_version: "0.1.0"
 __plantd_master_daemon: "apex-master"
+__plantd_master_srcdir: "/usr/src/go/master"
 __plantd_master_packages:
   - build-essential
   - protobuf-compiler

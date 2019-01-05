@@ -6,46 +6,10 @@
 - include_tasks: setup-debian.yml
   when: ansible_os_family == 'Debian'
 
-# TODO: - include_tasks: build.yml
-- name: Get the master service repository
-  git:
-    repo: https://gitlab.com/crdc/apex/master
-    dest: /usr/src/go/src/gitlab.com/crdc/apex/master
-    recursive: true
-  tags: [ "plantd-master" ]
-
-- name: Install the go dependencies
-  shell: make setup
-  args:
-    chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
-  tags: [ "plantd-master" ]
-
-- name: Build the master service GraphQL schema
-  shell: make schema
-  args:
-    chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
-  tags: [ "plantd-master" ]
-
-- name: Build the master service
-  shell: make all
-  args:
-    chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
-  tags: [ "plantd-master" ]
-
-# TODO: - include_tasks: initialize.yml
-- name: Run database setup
-  shell:
-    cmd: |
-      pgcli -h localhost -p 5432 -U postgres >/dev/null <<EOF
-      \i data/1.0/1_users.sql
-      \i data/1.0/2_roles.sql
-      \i data/1.0/3_rel_users_roles.sql
-      EOF
-  args:
-    chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
-  tags: [ "plantd-master" ]
-
+- include_tasks: build.yml
+- include_tasks: initialize.yml
 # TODO: - include_tasks: configure.yml
+# TODO: - import_tasks: users.yml
 
 - name: Ensure Plantd Master is started and enabled on boot.
   service:
@@ -53,7 +17,3 @@
     state: "{{ plantd_master_service_state }}"
     enabled: "{{ plantd_master_service_enabled }}"
   tags: [ "plantd-master" ]
-
-# Configure Plantd Master
-#- import_tasks: databases.yml
-#- import_tasks: users.yml

@@ -1,6 +1,8 @@
 ---
 - name: restart plantd-master
-  service:
+  systemd:
     name: "{{ plantd_master_daemon }}"
     state: "{{ plantd_master_restarted_state }}"
-    sleep: 5
+    enabled: "{{ plantd_master_service_enabled }}"
+    daemon_reload: yes
+  tags: [ "plantd-master" ]

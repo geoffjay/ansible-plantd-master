@@ -16,8 +16,8 @@
 
 - name: Define __plantd_master_srcdir
   set_fact:
-    __plantd_master_srcdir: "{{ __plantd_master_srcdir }}"
-  when: __plantd_master_srcdir is not defined
+    plantd_master_srcdir: "{{ __plantd_master_srcdir }}"
+  when: plantd_master_srcdir is not defined
 
 - name: Define plantd_master_packages
   set_fact:

@@ -4,3 +4,4 @@ __plantd_master_daemon: "apex-master"
 __plantd_master_packages:
   - build-essential
   - protobuf-compiler
+  - pgcli

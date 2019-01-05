@@ -11,10 +11,11 @@
   git:
     repo: https://gitlab.com/crdc/apex/master
     dest: /usr/src/go/src/gitlab.com/crdc/apex/master
+    recursive: true
   tags: [ "plantd-master" ]
 
 - name: Install the go dependencies
-  shell: make dep
+  shell: make setup
   args:
     chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
   tags: [ "plantd-master" ]
@@ -23,6 +24,8 @@
   shell: make schema
   args:
     chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
+  environment:
+    PATH: {{ ansible_env.HOME }}/go/bin:{{ ansible_env.PATH }}
   tags: [ "plantd-master" ]
 
 - name: Build the master service

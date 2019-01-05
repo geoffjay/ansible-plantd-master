@@ -8,3 +8,9 @@ plantd_master_group: plantd
 
 plantd_master_service_state: started
 plantd_master_service_enabled: true
+
+plantd_master_dbhost: "localhost"
+plantd_master_dbname: "postgres"
+plantd_master_dbuser: "postgres"
+plantd_master_dbport: 5432
+plantd_master_dbpass: ""

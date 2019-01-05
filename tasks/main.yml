@@ -17,5 +17,4 @@
 #    name: "{{ plantd_master_daemon }}"
 #    state: "{{ plantd_master_service_state }}"
 #    enabled: "{{ plantd_master_service_enabled }}"
-#    daemon_reload: yes
 #  tags: [ "plantd-master" ]

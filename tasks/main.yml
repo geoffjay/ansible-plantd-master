@@ -13,14 +13,8 @@
     dest: /usr/src/go/src/gitlab.com/crdc/apex/master
   tags: [ "plantd-master" ]
 
-- name: Build the master service GraphQL schema
-  shell: make schema
-  args:
-    chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
-  tags: [ "plantd-master" ]
-
 - name: Build the master service
-  shell: make
+  shell: make all
   args:
     chdir: /usr/src/go/src/gitlab.com/crdc/apex/master
   tags: [ "plantd-master" ]

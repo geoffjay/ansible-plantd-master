@@ -4,9 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-User=crdc
 WorkingDirectory={{ plantd_master_srcdir }}
-ExecStart={{ plantd_master_srcdir }}/master-v{{ plantd_master_version }}-linux-amd64
+ExecStart={{ plantd_master_srcdir }}/bin/master-master-linux-amd64
 Restart=on-failure
 
 [Install]

@@ -8,23 +8,23 @@
   tags: [ "plantd-master" ]
 
 # FIXME: can't get postgres role to set user/pass
-- name: Run database setup
-  shell:
-    cmd: |
-      psql -a -q -h "{{ plantd_master_dbhost }}" \
-        -d "{{ plantd_master_dbname }}" \
-        -U "{{ plantd_master_dbuser }}" \
-        -p "{{ plantd_master_dbport }}" \
-        -f "{{ item }}"
-  with_items:
-    - "data/1.0/1_users.sql"
-    - "data/1.0/2_roles.sql"
-    - "data/1.0/3_rel_users_roles.sql"
-  become: yes
-  become_user: postgres
-  args:
-    chdir: "{{ plantd_master_srcdir }}"
-  tags: [ "plantd-master" ]
+#- name: Run database setup
+#  shell:
+#    cmd: |
+#      psql -a -q -h "{{ plantd_master_dbhost }}" \
+#        -d "{{ plantd_master_dbname }}" \
+#        -U "{{ plantd_master_dbuser }}" \
+#        -p "{{ plantd_master_dbport }}" \
+#        -f "{{ item }}"
+#  with_items:
+#    - "data/1.0/1_users.sql"
+#    - "data/1.0/2_roles.sql"
+#    - "data/1.0/3_rel_users_roles.sql"
+#  become: yes
+#  become_user: postgres
+#  args:
+#    chdir: "{{ plantd_master_srcdir }}"
+#  tags: [ "plantd-master" ]
 
 #- name: Change database user password
 #  shell:

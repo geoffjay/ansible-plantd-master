@@ -3,6 +3,7 @@
   git:
     repo: https://gitlab.com/crdc/apex/master
     dest: "{{ plantd_master_srcdir }}"
+    force: yes
   tags: [ "plantd-master" ]
 
 - name: Install the go dependencies

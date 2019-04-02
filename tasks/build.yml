@@ -3,23 +3,10 @@
   git:
     repo: https://gitlab.com/crdc/apex/master
     dest: "{{ plantd_master_srcdir }}"
-    recursive: true
   tags: [ "plantd-master" ]
 
 - name: Install the go dependencies
   shell: make setup
-  args:
-    chdir: "{{ plantd_master_srcdir }}"
-  tags: [ "plantd-master" ]
-
-- name: Build the master service GraphQL schema
-  shell: make schema
-  args:
-    chdir: "{{ plantd_master_srcdir }}"
-  tags: [ "plantd-master" ]
-
-- name: Build the master service Protobuf related
-  shell: make proto
   args:
     chdir: "{{ plantd_master_srcdir }}"
   tags: [ "plantd-master" ]

@@ -12,9 +12,9 @@
 # TODO: - include_tasks: configure.yml
 # TODO: - import_tasks: users.yml
 
-#- name: Ensure Plantd Master is started and enabled on boot.
-#  systemd:
-#    name: "{{ plantd_master_daemon }}"
-#    state: "{{ plantd_master_service_state }}"
-#    enabled: "{{ plantd_master_service_enabled }}"
-#  tags: [ "plantd-master" ]
+- name: Ensure Plantd Master is started and enabled on boot.
+  systemd:
+    name: "{{ plantd_master_daemon }}"
+    state: "{{ plantd_master_service_state }}"
+    enabled: "{{ plantd_master_service_enabled }}"
+  tags: [ "plantd-master" ]

@@ -13,7 +13,7 @@
   tags: [ "plantd-master" ]
 
 - name: Build the master service
-  shell: make build
+  shell: make
   args:
     chdir: "{{ plantd_master_srcdir }}"
   tags: [ "plantd-master" ]

@@ -1,6 +1,6 @@
 ---
 __plantd_master_version: "0.1.6"
 __plantd_master_daemon: "plantd-master"
-__plantd_master_srcdir: "/usr/bin/plantd-master"
+__plantd_master_srcdir: "/usr/src/plantd-master"
 __plantd_master_packages:
   - build-essential

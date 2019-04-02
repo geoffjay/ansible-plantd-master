@@ -17,3 +17,9 @@
   args:
     chdir: "{{ plantd_master_srcdir }}"
   tags: [ "plantd-master" ]
+
+- name: Install the master service
+  shell: make install
+  args:
+    chdir: "{{ plantd_master_srcdir }}"
+  tags: [ "plantd-master" ]

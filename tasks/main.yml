@@ -8,14 +8,9 @@
 
 # FIXME: build steps refuse to use user $PATH bin, do this to get past for now
 - name: Install go-bindata
+  environment:
+    GOBIN: /usr/bin
   command: go get github.com/go-bindata/go-bindata/go-bindata
-  tags: [ "plantd-master" ]
-
-- name: Link go-bindata
-  file:
-    src: "{{ plantd_master_srcdir }}/bin/go-bindata"
-    dest: /usr/bin/go-bindata
-    state: link
   tags: [ "plantd-master" ]
 
 - include_tasks: build.yml
